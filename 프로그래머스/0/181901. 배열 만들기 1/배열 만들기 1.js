@@ -1,8 +1,9 @@
 function solution(n, k) {
-    var answer = [];
-    var cnt = n/k;
-    for(var i = 1; i <= cnt; i++){
-        answer.push(i*k);
+    let answer = [];
+    
+    for(let i = k; i <= n; i+=k){
+        answer.push(i);
     }
+    
     return answer;
 }
