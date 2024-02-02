@@ -1,14 +1,12 @@
-import java.util.*;
-
 class Solution {
-    public List solution(int n, int k) {
-        List<Integer> answer = new ArrayList<>();
+    public int[] solution(int n, int k) {
+        int cnt = n/k;
+        int[] answer = new int[cnt];
         
-        for(int i = 1; i <= n; i++){
-            if(i%k == 0){
-                answer.add(i);
-            }
+        for(int i = 1; i <= cnt; i++){
+            answer[i-1] = i*k;
         }
+        
         return answer;
     }
 }
