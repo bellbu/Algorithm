@@ -1,13 +1,13 @@
 function solution(my_string) {
-    let answer = [];
+    let answer = '';
     
-    for(let i = 0; i < my_string.length; i++){
-        if(my_string[i] === my_string[i].toUpperCase()){
-            answer.push(my_string[i].toLowerCase());     
-        }else{
-            answer.push(my_string[i].toUpperCase());
-        }
+    for(let i of my_string){
+       if(i === i.toUpperCase()){
+           answer += i.toLowerCase();
+       }else{
+           answer += i.toUpperCase();
+       }
     }
-    answer = answer.join('');
     return answer;
+    
 }
