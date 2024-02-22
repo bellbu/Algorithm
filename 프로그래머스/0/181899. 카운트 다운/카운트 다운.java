@@ -1,8 +1,7 @@
 class Solution {
-    public int[] solution(int start, int end_num) {
-        int num = start - end_num + 1;
-        int[] answer = new int[num];
-        for(int i = start; i >= end_num; i--){
+    public int[] solution(int start, int end) {
+        int[] answer = new int[start - end + 1];
+        for(int i = start; i >= end; i--){
             answer[start-i] = i;
         }
         return answer;
