@@ -1,15 +1,15 @@
 class Solution {
     public int solution(int n) {
         int fact = 1;
-        int answer = 0;
+        int i = 1;
         
-        for(int i=1; fact <= n; i++) {
+        while(fact <= n) {
             fact *= i;
-            if(fact <= n) {
-                answer = i;
-            }
+            if(fact > n) break;
+            i++;
         }
         
-        return answer;
+        return i - 1;
+        
     }
 }
