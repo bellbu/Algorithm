@@ -1,21 +1,18 @@
-import java.util.*;
+import java.util.ArrayList;
 
 class Solution {
     public int[] solution(int l, int r) {
-        int size = 0;
-        List<Integer> list = new ArrayList<>();
         
-        for(int i = l; i<=r; i++){
-            String tmp = Integer.toString(i);
-            tmp = tmp.replace("5","").replace("0","");
-            
-            if(tmp.equals("")){
-                list.add(i);
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        for (int i = 1; i < 64; i++) {
+            int num = Integer.parseInt(Integer.toBinaryString(i)) * 5;
+            if (l <= num && num <= r) {
+                list.add(num);
             }
         }
-       
-        return list.size() == 0? new int[]{-1} : list.stream().mapToInt(Integer::intValue).toArray();
         
+        return list.isEmpty() ? new int[] { -1 } : list.stream().mapToInt(i -> i).toArray(); 
         
     }
 }
