@@ -1,15 +1,13 @@
 import java.util.*;
 
 class Solution {
-    public List<Integer> solution(int num, int total) {
-        List<Integer> answer = new ArrayList<>();
-        
-        int start = total / num - (num - 1) / 2;
-        
-        for (int i = 0; i < num; i++) {
-            answer.add(start + i);
-        }
-        
+	public int[] solution(int num, int total) {
+		int[] answer = new int[num];
+		int first = total / num - (num - 1) / 2;
+		for (int i =0; i < num; i++) {	
+			answer[i] = first++;
+		}
         return answer;
-    }
+	}
+
 }
